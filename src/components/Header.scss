@@ -1,0 +1,181 @@
+.header {
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 0 10px #ccc;
+
+    .header__warning {
+        width: 100%;
+        background: #0054AE;
+
+        h4 {
+            max-width: 1920px;
+            margin: 0 auto;
+            padding: 10px 0;
+            text-align: center;
+
+            a {
+                color: #fff;
+            }
+
+            color: #fff;
+        }
+    }
+
+    .header__container {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 0;
+
+        .header__up {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90px;
+
+            img {
+                object-fit: cover;
+            }
+
+            .search__container {
+                position: relative;
+
+                input {
+                    height: 50px;
+                    width: 680px;
+                    outline: none;
+                    padding-left: 20px;
+                    border-radius: 10px;
+                    border: none;
+                    background: #F5F5F5;
+                    font-size: 18px;
+
+                    &::placeholder {
+                        color: #00000076;
+                    }
+                }
+
+                i {
+                    position: absolute;
+                    font-size: 18px;
+                    right: 20px;
+                    top: 10px;
+                    color: #0054AE;
+                }
+            }
+
+            button {
+                width: 70px;
+                height: 50px;
+                border: none;
+                background: none;
+
+                i {
+                    font-size: 22px;
+                }
+
+                font-size: 16px;
+
+                h5 {
+                    margin: 0;
+                }
+            }
+        }
+
+        .header__down {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #eeeeee;
+            width: 100%;
+            height: 70px;
+
+            .header__down__left {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                button {
+                    width: 190px;
+                    height: 40px;
+                    border-radius: 10px;
+                    background: #0054AE;
+                    border: none;
+                    color: #fff;
+                    font-size: 16px;
+                    cursor: pointer;
+                    transition: 0.4s ease-in-out all;
+                    box-shadow: 0px 0px 10px #0054AE;
+
+                    i {
+                        color: #fff;
+                        font-size: 16px;
+                        padding-right: 6px;
+                        transition: 0.4s ease-in-out all;
+                    }
+
+                    &:hover {
+                        background: #eeeeee;
+                        color: #0054AE;
+                        box-shadow: 0px 0px 10px #eeeeee;
+                        i {
+                            color: #0054AE;
+                        }
+                    }
+                }
+
+                img {
+                    margin-left: 20px;
+                    width: 25px;
+                    height: 20px;
+                }
+
+                h6 {
+                    margin-left: 10px;
+                    font-size: 16px;
+                }
+            }
+
+            .header__down__right {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 40%;
+                margin-top: 10px;
+                p{
+                    cursor: pointer;
+                }
+                .select__active {
+                    position: absolute;
+                    list-style: none;
+                    left: -10px;
+                    top: 30px;
+                    text-align: center;
+                    background: white;
+                    border: 1px solid #ccc;
+                    padding-left: 0;
+                    li{
+                        transition: 0.1s ease-in-out all;
+                        padding: 10px;
+                        cursor: pointer;
+                        &:hover{
+                            color: #fff;
+                            background: #0054AE;
+                        }
+                    }
+                }
+
+                .none {
+                    display: none;
+                }
+                button{
+                    height: 40px;
+                    border: none;
+                    background: none;
+                    margin-top: -10px;
+                    font-size: 16px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
