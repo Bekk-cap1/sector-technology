@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Header.scss";
-import sector__logo from "../image/sector_technology_logo.png";
-import flag__uzb from "../image/flag_uzb.png";
+import sector__logo from "../assets/image/sector_technology_logo.png";
+import flag__uzb from "../assets/image/flag_uzb.png";
 
 function Header() {
   const selectRefs = useRef([]);
@@ -26,10 +26,49 @@ function Header() {
     },
   ];
 
+
+  const [isFixed, setIsFixed] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsFixed(window.scrollY > 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+      const script = document.createElement("script");
+      script.src = "//code.jivosite.com/widget/U2VMf0hgza";
+      script.async = true;
+      document.body.appendChild(script);
+  
+      window.jivo_onLoadCallback = () => {
+        if (window.jivo_api) {
+          window.jivo_api.setWidgetState("hidden");
+        }
+      };
+  
+      return () => {
+        document.body.removeChild(script);
+      };
+    }, []);
+  
+    const openChat = () => {
+      if (window.jivo_api) {
+        window.jivo_api.open();
+      } else {
+        console.error("Jivo API не загрузился");
+      }
+    };
   
 
   return (
-    <div className="header">
+    <div className={`header ${isFixed ? 'fixed' : ''}`}>
       <div className="header__warning">
         <h4>
           <a href="#">Корзина неавторизованных пользователей хранится 7 дней. Пожалуйста, авторизуйтесь</a>
@@ -90,7 +129,7 @@ function Header() {
                 </ul>
               </div>
             ))}
-            <button>Онлайн чат</button>
+            <button onClick={openChat}>Онлайн чат</button>
           </div>
         </section>
       </header>
